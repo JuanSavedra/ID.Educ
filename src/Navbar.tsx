@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const navLinks = [
   { name: 'Página inicial', href: '#' },
@@ -7,7 +7,7 @@ const navLinks = [
   { name: 'MBTI', href: '#' }
 ]
 
-const Navbar: React.FC = () => {
+function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
