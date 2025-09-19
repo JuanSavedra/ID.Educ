@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import {
   Bar,
   BarChart,
@@ -9,7 +10,7 @@ import {
 } from 'recharts'
 
 function GradeChart() {
-  const gradeChartData = [
+  const gradeChartDataFirst = [
     {
       Nome: 'M',
       Nota: 8,
@@ -40,11 +41,60 @@ function GradeChart() {
     },
   ];
 
+  const gradeChartDataSecond = [
+    {
+      Nome: 'M',
+      Nota: 6,
+    },
+    {
+      Nome: 'P',
+      Nota: 8,
+    },
+    {
+      Nome: 'B',
+      Nota: 5,
+    },
+    {
+      Nome: 'G',
+      Nota: 7,
+    },
+    {
+      Nome: 'H',
+      Nota: 6,
+    },
+    {
+      Nome: 'F',
+      Nota: 7,
+    },
+    {
+      Nome: 'A',
+      Nota: 10,
+    },
+  ];
+
+  type Semester = 's1' | 's2'
+
+  const [selectedSemester, setSelectedSemester] = useState<Semester>('s1')
+  const currentData = selectedSemester === 's1' ? gradeChartDataFirst : gradeChartDataSecond
+  const handleSemesterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedSemester(event.target.value as Semester)
+  }
+
   return (
     <>
+      <div className="mb-4 flex justify-start">
+        <select
+          value={selectedSemester}
+          onChange={handleSemesterChange}
+          className="p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="s1">1º Semestre</option>
+          <option value="s2">2º Semestre</option>
+        </select>
+      </div>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart
-          data={gradeChartData}
+          data={currentData}
           margin={{
             top: 35,
             right: 0,
