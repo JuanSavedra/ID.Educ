@@ -11,31 +11,31 @@ import {
 function GradeChart() {
   const gradeChartData = [
     {
-      name: 'M',
+      Nome: 'M',
       Nota: 8,
     },
     {
-      name: 'P',
+      Nome: 'P',
       Nota: 3,
     },
     {
-      name: 'B',
+      Nome: 'B',
       Nota: 4,
     },
     {
-      name: 'G',
+      Nome: 'G',
       Nota: 8,
     },
     {
-      name: 'H',
+      Nome: 'H',
       Nota: 9,
     },
     {
-      name: 'F',
+      Nome: 'F',
       Nota: 7,
     },
     {
-      name: 'A',
+      Nome: 'A',
       Nota: 5,
     },
   ];
@@ -52,18 +52,10 @@ function GradeChart() {
             bottom: 0,
           }}
         >
-          {/* Adiciona um grid quadriculado ao fundo do gráfico */}
           <CartesianGrid strokeDasharray="3 3" />
-
-          {/* Define o eixo X (horizontal) usando a chave 'mes' dos nossos dados */}
-          <XAxis dataKey="name" />
-          
-          {/* Tooltip é a caixinha de informações que aparece ao passar o mouse */}
+          <XAxis dataKey="Nome" />
           <Tooltip wrapperStyle={{ backgroundColor: '#333', color: '#fff' }} />
-
           <Legend />
-
-          {/* Define a primeira barra, correspondente à chave 'vendas' e com a cor azul */}
           <Bar dataKey="Nota" fill="#3b82f6" />
         </BarChart>
       </ResponsiveContainer>

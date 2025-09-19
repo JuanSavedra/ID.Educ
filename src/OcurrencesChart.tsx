@@ -3,32 +3,52 @@ import { ResponsiveContainer, BarChart, CartesianGrid, XAxis, Tooltip, Legend, B
 function OcurrencesChart() {
   const ocurrencesChartData = [
     {
-      name: 'M',
-      Nota: 8,
+      Nome: 'Ja',
+      Ocorrência: 3,
     },
     {
-      name: 'P',
-      Nota: 3,
+      Nome: 'Fe',
+      Ocorrência: 1,
     },
     {
-      name: 'B',
-      Nota: 4,
+      Nome: 'Ma',
+      Ocorrência: 1,
     },
     {
-      name: 'G',
-      Nota: 8,
+      Nome: 'Ab',
+      Ocorrência: 4,
     },
     {
-      name: 'H',
-      Nota: 9,
+      Nome: 'Ma',
+      Ocorrência: 2,
     },
     {
-      name: 'F',
-      Nota: 7,
+      Nome: 'Ju',
+      Ocorrência: 1,
     },
     {
-      name: 'A',
-      Nota: 5,
+      Nome: 'Ju',
+      Ocorrência: 6,
+    },
+    {
+      Nome: 'Ag',
+      Ocorrência: 1,
+    },
+    {
+      Nome: 'Se',
+      Ocorrência: 4,
+    },
+    {
+      Nome: 'Ou',
+      Ocorrência: 1,
+    },
+    {
+      Nome: 'No',
+      Ocorrência: 2,
+    },
+    {
+      Nome: 'De',
+      Ocorrência: 3,
     },
   ];
 
@@ -44,19 +64,11 @@ function OcurrencesChart() {
             bottom: 0,
           }}
         >
-          {/* Adiciona um grid quadriculado ao fundo do gráfico */}
           <CartesianGrid strokeDasharray="3 3" />
-
-          {/* Define o eixo X (horizontal) usando a chave 'mes' dos nossos dados */}
-          <XAxis dataKey="name" />
-          
-          {/* Tooltip é a caixinha de informações que aparece ao passar o mouse */}
+          <XAxis dataKey="Nome" />
           <Tooltip wrapperStyle={{ backgroundColor: '#333', color: '#fff' }} />
-
           <Legend />
-
-          {/* Define a primeira barra, correspondente à chave 'vendas' e com a cor azul */}
-          <Bar dataKey="Nota" fill="#dc2626" />
+          <Bar dataKey="Ocorrência" fill="#dc2626" />
         </BarChart>
       </ResponsiveContainer>
     </>
