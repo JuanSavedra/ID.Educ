@@ -1,15 +1,7 @@
-import {
-  Bar,
-  BarChart,
-  Legend,
-  XAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer
-} from 'recharts'
+import { ResponsiveContainer, BarChart, CartesianGrid, XAxis, Tooltip, Legend, Bar } from "recharts"
 
-function GradeChart() {
-  const gradeChartData = [
+function OcurrencesChart() {
+  const ocurrencesChartData = [
     {
       name: 'M',
       Nota: 8,
@@ -44,7 +36,7 @@ function GradeChart() {
     <>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart
-          data={gradeChartData}
+          data={ocurrencesChartData}
           margin={{
             top: 35,
             right: 0,
@@ -64,11 +56,11 @@ function GradeChart() {
           <Legend />
 
           {/* Define a primeira barra, correspondente à chave 'vendas' e com a cor azul */}
-          <Bar dataKey="Nota" fill="#3b82f6" />
+          <Bar dataKey="Nota" fill="#dc2626" />
         </BarChart>
       </ResponsiveContainer>
     </>
   )
 }
 
-export default GradeChart
+export default OcurrencesChart

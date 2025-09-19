@@ -1,6 +1,7 @@
 import './App.css'
 import Navbar from './Navbar.tsx' 
 import GradeChart from './GradeChart.tsx'
+import OcurrencesChart from './OcurrencesChart.tsx'
 
 function App() {
   return (
@@ -18,6 +19,12 @@ function App() {
             Notas
           </h2>
           <GradeChart />
+        </div>
+        <div className="bg-white p-6 rounded-lg shadow-md mt-6">
+          <h2 className="text-xl font-semibold mb-4 text-gray-700">
+            Ocorrências
+          </h2>
+          <OcurrencesChart />
         </div>
       </main>
     </div>
