@@ -2,6 +2,7 @@ import './App.css'
 import Navbar from './Navbar.tsx' 
 import GradeChart from './GradeChart.tsx'
 import OcurrencesChart from './OcurrencesChart.tsx'
+import MbtiSelector from './MbtiSelector.tsx'
 
 function App() {
   return (
@@ -25,6 +26,12 @@ function App() {
             Ocorrências
           </h2>
           <OcurrencesChart />
+        </div>
+        <div className="bg-white p-6 rounded-lg shadow-md mt-6">
+          <h2 className="text-xl font-semibold mb-4 text-gray-700">
+            MBTI
+          </h2>
+          <MbtiSelector />
         </div>
       </main>
     </div>
