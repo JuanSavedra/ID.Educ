@@ -74,28 +74,24 @@ Para rodar este projeto localmente, siga os passos abaixo:
 Bash
 ```
 git clone https://github.com/seu-usuario/ID.Educ.git
-}
 ```
 
 ### Navegue até o diretório do projeto:
 Bash
 ```
 cd ID.Educ
-}
 ```
 
 ### Instale todas as dependências necessárias:
 Bash
 ```
 npm install
-}
 ```
 
 ### Inicie o servidor de desenvolvimento:
 Bash
 ```
 npm run dev
-}
 ```
 
 ### Abra seu navegador e acesse http://localhost:5173 (ou a porta indicada no seu terminal).
