@@ -53,25 +53,23 @@ function OcurrencesChart() {
   ];
 
   return (
-    <>
-      <ResponsiveContainer width="100%" height={300}>
-        <BarChart
-          data={ocurrencesChartData}
-          margin={{
-            top: 35,
-            right: 0,
-            left: 0,
-            bottom: 0,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="Nome" />
-          <Tooltip wrapperStyle={{ backgroundColor: '#333', color: '#fff' }} />
-          <Legend />
-          <Bar dataKey="Ocorrência" fill="#dc2626" />
-        </BarChart>
-      </ResponsiveContainer>
-    </>
+    <ResponsiveContainer width="100%" height={300}>
+      <BarChart
+        data={ocurrencesChartData}
+        margin={{
+          top: 35,
+          right: 0,
+          left: 0,
+          bottom: 0,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="Nome" />
+        <Tooltip wrapperStyle={{ backgroundColor: '#333', color: '#fff' }} />
+        <Legend />
+        <Bar dataKey="Ocorrência" fill="#dc2626" />
+      </BarChart>
+    </ResponsiveContainer>
   )
 }
 

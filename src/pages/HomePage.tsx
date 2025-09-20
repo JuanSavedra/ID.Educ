@@ -1,11 +1,14 @@
 import GradeChart from "../components/GradeChart"
 import MbtiSelector from "../components/MbtiSelector"
 import OcurrencesChart from "../components/OcurrencesChart"
+import { useUser } from "../context/UserContext";
 
 function HomePage() {
+  const { profile } = useUser();
+
   return (
     <>
-      <h1 className="text-3xl font-bold">Olá!</h1>
+      <h1 className="text-3xl font-bold">Olá, {profile.name}!</h1>
       <h3 className="mt-2">Seja bem-vindo ao seu painel de autogestão.</h3>
       <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 mt-6">
         Veja seus dashboards

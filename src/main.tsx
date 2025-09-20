@@ -8,6 +8,8 @@ import OcurrencesPage from './pages/OccurrencesPage.tsx'
 import MbtiPage from './pages/MbtiPage.tsx' 
 
 import App from './App.tsx'
+import { UserProvider } from './context/UserContext.tsx'
+import ProfilePage from './pages/ProfilePage.tsx'
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: '/mbti',
         element: <MbtiPage />
+      },
+      {
+        path: '/perfil',
+        element: <ProfilePage />
       }
     ]
   }
@@ -36,8 +42,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
+    <UserProvider>
+      <RouterProvider router={router} />
+    </UserProvider>
+  </React.StrictMode>
 )
 
 

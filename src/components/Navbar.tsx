@@ -37,9 +37,12 @@ function Navbar() {
             </div>
           </div>
           <div className="hidden md:block">
-             <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition-transform duration-300 ease-in-out transform hover:scale-105">
-                Perfil
-             </button>
+            <Link
+              key='Perfil'
+              to='/perfil'
+              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition-transform duration-300 ease-in-out transform hover:scale-105">
+              Perfil
+            </Link>
           </div>
           <div className="md:hidden flex items-center">
             <button
@@ -65,20 +68,23 @@ function Navbar() {
       <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={link.href}
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
-           <button className="w-full mt-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md">
-                Perfil
-           </button>
+            <Link
+              key='Perfil'
+              to='/perfil'
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-blue-500 hover:text-white">
+              Perfil
+            </Link>
         </div>
       </div>
-    </nav>  
+    </nav>
   )
 }
 
