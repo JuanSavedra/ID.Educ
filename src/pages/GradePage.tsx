@@ -1,4 +1,6 @@
 import GradeChart from '../components/GradeChart';
+import GradeTable from '../components/GradeTable';
+import { detailedGradesData } from '../data/gradeTableData';
 import { useUser } from '../context/UserContext';
 
 const profilePicture = 'https://i.pravatar.cc'
@@ -26,6 +28,12 @@ function GradePage() {
             <h3 className="text-xl font-semibold text-gray-800">Quadro de Notas</h3>
             <p className="text-sm text-gray-500 mt-1 mb-4">Notas do período selecionado.</p>
             <GradeChart />
+          </div>
+        </div>
+        <div className="bg-white rounded-xl shadow-md overflow-hidden mt-6">
+          <div className="p-6">
+            <h3 className="text-xl font-semibold text-gray-800">Tabela de notas</h3>
+            <GradeTable grades={detailedGradesData}/>
           </div>
         </div>
       </div>

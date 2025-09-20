@@ -1,7 +1,7 @@
 import { useState, Fragment } from "react"
 import { Combobox, Transition } from '@headlessui/react'
-import { mbtiList } from '../mbtiData'
-import type { Mbti } from '../mbtiData' 
+import { mbtiList } from '../data/mbtiData'
+import type { Mbti } from '../data/mbtiData' 
 
 function MbtiSelector() {
   const [selectedMbti, setSelectedMbti] = useState<Mbti | null>(mbtiList[0]);
