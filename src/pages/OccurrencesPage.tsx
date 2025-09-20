@@ -1,5 +1,7 @@
 import OcurrencesChart from "../components/OcurrencesChart";
+import OcurrenceTable from "../components/OcurrencesTable";
 import { useUser } from "../context/UserContext";
+import { detailedOcurrencesData } from "../data/ocurrencesTableData";
 
 const profilePicture = 'https://i.pravatar.cc'
 
@@ -26,6 +28,12 @@ function OccurrencesPage() {
             <h3 className="text-xl font-semibold text-gray-800">Quadro de Ocorrências</h3>
             <p className="text-sm text-gray-500 mt-1 mb-4">Ocorrências do ano inteiro</p>
             <OcurrencesChart />
+          </div>
+        </div>
+        <div className="bg-white rounded-xl shadow-md overflow-hidden mt-6">
+          <div className="p-6">
+            <h3 className="text-xl font-semibold text-gray-800">Tabela de Ocorrências</h3>
+            <OcurrenceTable ocurrences={detailedOcurrencesData} />
           </div>
         </div>
       </div>
