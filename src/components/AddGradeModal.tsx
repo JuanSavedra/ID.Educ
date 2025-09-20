@@ -6,8 +6,7 @@ interface AddGradeModalProps {
   onClose: () => void;
 }
 
-const AddGradeModal: React.FC<AddGradeModalProps> = ({ isOpen, onClose }) => {
-  // Estado local para controlar os campos do formulário
+function AddGradeModal({isOpen, onClose}: AddGradeModalProps) {
   const [formData, setFormData] = useState({
     subject: '',
     grade: '',
@@ -22,8 +21,6 @@ const AddGradeModal: React.FC<AddGradeModalProps> = ({ isOpen, onClose }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Em uma aplicação real, aqui você enviaria os dados para uma API.
-    // Por enquanto, vamos apenas mostrar no console e fechar o modal.
     console.log('Dados do formulário:', formData);
     alert('Nota adicionada com sucesso! (Verifique o console)');
     onClose();
@@ -43,7 +40,6 @@ const AddGradeModal: React.FC<AddGradeModalProps> = ({ isOpen, onClose }) => {
         >
           <div className="fixed inset-0 bg-black bg-opacity-25" />
         </TransitionChild>
-
         <div className="fixed inset-0 overflow-y-auto">
           <div className="flex min-h-full items-center justify-center p-4 text-center">
             <TransitionChild
@@ -62,23 +58,19 @@ const AddGradeModal: React.FC<AddGradeModalProps> = ({ isOpen, onClose }) => {
                 >
                   Adicionar Nova Nota
                 </DialogTitle>
-                
                 <form onSubmit={handleSubmit} className="mt-4 space-y-4">
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-gray-700">Matéria</label>
                     <input type="text" name="subject" id="subject" value={formData.subject} onChange={handleChange} required className="mt-1 w-full p-2 border border-gray-300 rounded-md" />
                   </div>
-                  
                   <div>
                     <label htmlFor="grade" className="block text-sm font-medium text-gray-700">Nota</label>
                     <input type="number" name="grade" id="grade" value={formData.grade} onChange={handleChange} required step="0.1" min="0" max="10" className="mt-1 w-full p-2 border border-gray-300 rounded-md" />
                   </div>
-
                   <div>
                     <label htmlFor="publishedDate" className="block text-sm font-medium text-gray-700">Data de Publicação</label>
                     <input type="date" name="publishedDate" id="publishedDate" value={formData.publishedDate} onChange={handleChange} required className="mt-1 w-full p-2 border border-gray-300 rounded-md" />
                   </div>
-
                   <div>
                     <label htmlFor="semester" className="block text-sm font-medium text-gray-700">Semestre</label>
                     <select name="semester" id="semester" value={formData.semester} onChange={handleChange} required className="mt-1 w-full p-2 border border-gray-300 rounded-md">
@@ -87,7 +79,6 @@ const AddGradeModal: React.FC<AddGradeModalProps> = ({ isOpen, onClose }) => {
                       <option value="2025.2">2º Semestre</option>
                     </select>
                   </div>
-
                   <div className="mt-6 flex justify-end space-x-2">
                     <button type="button" onClick={onClose} className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 border border-transparent rounded-md hover:bg-gray-200">
                       Cancelar
@@ -97,7 +88,6 @@ const AddGradeModal: React.FC<AddGradeModalProps> = ({ isOpen, onClose }) => {
                     </button>
                   </div>
                 </form>
-
               </DialogPanel>
             </TransitionChild>
           </div>
