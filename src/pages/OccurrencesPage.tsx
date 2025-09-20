@@ -1,13 +1,19 @@
+import { useState } from "react";
 import OcurrencesChart from "../components/OcurrencesChart";
 import OcurrenceTable from "../components/OcurrencesTable";
 import { useUser } from "../context/UserContext";
 import { detailedOcurrencesData } from "../data/ocurrencesTableData";
+import AddOcurrenceModal from "../components/AddOcurrenceModal";
 
 const profilePicture = 'https://i.pravatar.cc'
 
 function OccurrencesPage() {
-  const { profile } = useUser() 
-  
+  const { profile } = useUser()
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <div className="bg-gray-100 min-h-screen p-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto">
@@ -36,6 +42,15 @@ function OccurrencesPage() {
             <OcurrenceTable ocurrences={detailedOcurrencesData} />
           </div>
         </div>
+        <div className="text-center mt-6">
+          <button
+            onClick={openModal}
+            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out transform hover:scale-105"
+          >
+            Adicionar Nova Ocorrência
+          </button>
+        </div>
+        <AddOcurrenceModal isOpen={isModalOpen} onClose={closeModal} />
       </div>
     </div>
   );
