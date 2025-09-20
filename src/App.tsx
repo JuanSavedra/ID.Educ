@@ -1,8 +1,8 @@
 import './App.css'
-import Navbar from './Navbar.tsx' 
-import GradeChart from './GradeChart.tsx'
-import OcurrencesChart from './OcurrencesChart.tsx'
-import MbtiSelector from './MbtiSelector.tsx'
+import Navbar from './components/Navbar.tsx' 
+import GradeChart from './components/GradeChart.tsx'
+import OcurrencesChart from './components/OcurrencesChart.tsx'
+import MbtiSelector from './components/MbtiSelector.tsx'
 
 function App() {
   return (
