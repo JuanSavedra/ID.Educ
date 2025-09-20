@@ -2,11 +2,17 @@ import GradeChart from '../components/GradeChart';
 import GradeTable from '../components/GradeTable';
 import { detailedGradesData } from '../data/gradeTableData';
 import { useUser } from '../context/UserContext';
+import AddGradeModal from '../components/AddGradeModal';
+import { useState } from 'react';
 
 const profilePicture = 'https://i.pravatar.cc'
 
 function GradePage() {
   const { profile } = useUser();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <div className="bg-gray-100 min-h-screen p-4 sm:p-6 lg:p-8">
@@ -33,9 +39,18 @@ function GradePage() {
         <div className="bg-white rounded-xl shadow-md overflow-hidden mt-6">
           <div className="p-6">
             <h3 className="text-xl font-semibold text-gray-800">Tabela de notas</h3>
-            <GradeTable grades={detailedGradesData}/>
+            <GradeTable grades={detailedGradesData} />
           </div>
         </div>
+        <div className="text-center mt-6">
+          <button
+            onClick={openModal}
+            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out transform hover:scale-105"
+          >
+            Adicionar Nova Nota
+          </button>
+        </div>
+        <AddGradeModal isOpen={isModalOpen} onClose={closeModal} />
       </div>
     </div>
   );
