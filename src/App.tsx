@@ -8,7 +8,6 @@ function App() {
   return (
     <div className="bg-gray-100 min-h-screen">
       <Navbar />
-
       <main className="p-4 md:p-8">
         <h1 className="text-3xl font-bold">Olá!</h1>
         <h3 className="mt-2">Seja bem-vindo ao seu painel de autogestão.</h3>

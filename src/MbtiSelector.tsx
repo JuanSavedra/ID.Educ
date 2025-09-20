@@ -4,13 +4,9 @@ import { mbtiList } from './mbtiData'
 import type { Mbti } from './mbtiData' 
 
 function MbtiSelector() {
-  // Estado para guardar o MBTI selecionado. Pode ser um objeto Mbti ou null.
   const [selectedMbti, setSelectedMbti] = useState<Mbti | null>(mbtiList[0]);
-
-  // Estado para guardar APENAS o texto que o usuário digita na busca.
   const [query, setQuery] = useState('');
 
-  // A lógica de filtro permanece a mesma, mas agora é mais seguro pois a 'query' é sempre uma string.
   const filteredMbtis =
     query === ''
       ? mbtiList
@@ -21,8 +17,6 @@ function MbtiSelector() {
 
   const handleSelectionChange = (mbti: Mbti | null) => {
     setSelectedMbti(mbti);
-    // Após selecionar um item (ou limpar a seleção), limpamos a busca.
-    // Isso garante que o input exiba o valor selecionado, não o texto da busca.
     setQuery('');
   };
 
@@ -37,10 +31,7 @@ function MbtiSelector() {
               
               <Combobox.Input
                 className="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0"
-                // O displayValue agora é mais simples: ele só mostra o item selecionado.
-                // O texto que o usuário digita é controlado pelo estado 'query'.
                 displayValue={(mbti: Mbti | null) => mbti ? `${mbti.type} - ${mbti.name}` : ''}
-                // O onChange do input ATUALIZA APENAS a query.
                 onChange={(event) => setQuery(event.target.value)}
                 placeholder="Pesquise por tipo ou nome..."
               />
