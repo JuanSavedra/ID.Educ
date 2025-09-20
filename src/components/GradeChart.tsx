@@ -9,69 +9,69 @@ import {
   ResponsiveContainer
 } from 'recharts'
 
+const gradeChartDataFirst = [
+  {
+    Nome: 'M',
+    Nota: 8,
+  },
+  {
+    Nome: 'P',
+    Nota: 3,
+  },
+  {
+    Nome: 'H',
+    Nota: 4,
+  },
+  {
+    Nome: 'G',
+    Nota: 8,
+  },
+  {
+    Nome: 'C',
+    Nota: 9,
+  },
+  {
+    Nome: 'I',
+    Nota: 7,
+  },
+  {
+    Nome: 'EF',
+    Nota: 10,
+  },
+];
+
+const gradeChartDataSecond = [
+  {
+    Nome: 'M',
+    Nota: 6,
+  },
+  {
+    Nome: 'P',
+    Nota: 8,
+  },
+  {
+    Nome: 'H',
+    Nota: 5,
+  },
+  {
+    Nome: 'G',
+    Nota: 7,
+  },
+  {
+    Nome: 'C',
+    Nota: 6,
+  },
+  {
+    Nome: 'I',
+    Nota: 7,
+  },
+  {
+    Nome: 'EF',
+    Nota: 9,
+  },
+];
+
 function GradeChart() {
-  const gradeChartDataFirst = [
-    {
-      Nome: 'M',
-      Nota: 8,
-    },
-    {
-      Nome: 'P',
-      Nota: 3,
-    },
-    {
-      Nome: 'B',
-      Nota: 4,
-    },
-    {
-      Nome: 'G',
-      Nota: 8,
-    },
-    {
-      Nome: 'H',
-      Nota: 9,
-    },
-    {
-      Nome: 'F',
-      Nota: 7,
-    },
-    {
-      Nome: 'A',
-      Nota: 5,
-    },
-  ];
-
-  const gradeChartDataSecond = [
-    {
-      Nome: 'M',
-      Nota: 6,
-    },
-    {
-      Nome: 'P',
-      Nota: 8,
-    },
-    {
-      Nome: 'B',
-      Nota: 5,
-    },
-    {
-      Nome: 'G',
-      Nota: 7,
-    },
-    {
-      Nome: 'H',
-      Nota: 6,
-    },
-    {
-      Nome: 'F',
-      Nota: 7,
-    },
-    {
-      Nome: 'A',
-      Nota: 10,
-    },
-  ];
-
   type Semester = 's1' | 's2'
 
   const [selectedSemester, setSelectedSemester] = useState<Semester>('s1')
